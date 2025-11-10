@@ -10,9 +10,7 @@ const ProductDetails = ({ cartItem, setCartItem }) => {
   useEffect(() => {
     const productDetails = async () => {
       try {
-        const res = await fetch(
-          "https://e-commerce-v1-431p.onrender.com/products/" + id
-        );
+        const res = await fetch(process.env.REACT_APP_URL + "/" + id);
         const resData = await res.json();
         setProducts(resData);
       } catch (error) {
