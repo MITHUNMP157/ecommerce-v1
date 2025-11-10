@@ -12,7 +12,7 @@ const Home = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          "http://localhost:8080/products?" + searchParams
+          "https://e-commerce-v1-431p.onrender.com/products?" + searchParams
         );
         const resData = await res.json();
         setProducts(resData);

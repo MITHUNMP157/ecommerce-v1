@@ -7,7 +7,9 @@ const OrdersDetails = () => {
   useEffect(() => {
     const orders = async () => {
       try {
-        const res = await fetch("http://localhost:8080/orderedItems");
+        const res = await fetch(
+          "https://e-commerce-v1-431p.onrender.com/orderedItems"
+        );
         const resData = await res.json();
         setOrderData(resData);
       } catch (error) {
@@ -19,9 +21,12 @@ const OrdersDetails = () => {
 
   const cancelOrder = async (o) => {
     try {
-      const res = await fetch(`http://localhost:8080/cancelOrder/${o._id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `https://e-commerce-v1-431p.onrender.com/cancelOrder/${o._id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (res.ok) {
         setOrderData((prev) => prev.filter((order) => order._id !== o._id));
         toast.warn("Order Cancel Success");
