@@ -1,13 +1,5 @@
 import React, { useState, useRef } from "react";
 
-// UserProfile.jsx
-// Single-file React component (Bootstrap) for a user profile card with edit mode,
-// avatar upload, and simple validation.
-// Usage:
-// 1) Ensure bootstrap is available in your project (npm install bootstrap OR add CDN link)
-//    import 'bootstrap/dist/css/bootstrap.min.css';
-// 2) Place this file in your components folder and import <UserProfile /> where needed.
-
 export default function Profile() {
   const initialUser = {
     id: "EMP-001",
@@ -23,12 +15,11 @@ export default function Profile() {
   const [user, setUser] = useState(initialUser);
   const [editMode, setEditMode] = useState(false);
   const [temp, setTemp] = useState(initialUser);
-  const [avatar, setAvatar] = useState(null); // data URL
+  const [avatar, setAvatar] = useState(null);
   const fileInputRef = useRef(null);
 
   const toggleEdit = () => {
     if (editMode) {
-      // Canceling edit -> revert temp
       setTemp(user);
     }
     setEditMode((v) => !v);
@@ -40,7 +31,6 @@ export default function Profile() {
   };
 
   const handleSave = () => {
-    // simple validation
     if (!temp.name.trim()) {
       alert("Name cannot be empty");
       return;
