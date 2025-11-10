@@ -1,0 +1,93 @@
+.navbar-main-nav {
+  width: 100%;
+  background-color: rgba(47, 49, 49, 0.988);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 2px 2px 5px 5px rgba(128, 128, 128, 0.426);
+  text-align: center;
+  /* position: fixed;
+  z-index: 1000;
+  top: 0;
+  overflow: hidden; */
+}
+
+.brand-logo {
+  color: white;
+}
+
+.search-input {
+  width: 500px;
+}
+
+.search-input input {
+  background-color: rgba(255, 255, 255, 0.816);
+  width: 80%;
+  padding: 8px 0px;
+  border-radius: 5px;
+  border: none;
+  outline: transparent;
+}
+.search-input input:focus {
+  text-indent: 8px;
+  background-color: rgb(255, 255, 255);
+}
+.search-input input::placeholder {
+  text-align: center;
+  text-indent: 8px;
+}
+
+.search-input button {
+  margin-left: 5px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background-color: rgb(255, 183, 0);
+  font-weight: bold;
+  border: none;
+}
+.search-input button:hover {
+  background-color: rgba(255, 183, 0, 0.81);
+}
+
+.nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-items > .nav-item-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+.nav-items > .cart-count {
+  background-color: rgb(255, 183, 0);
+  text-decoration: none;
+  color: black;
+  width: 20px;
+  border-radius: 3px;
+  margin-left: 3px;
+  font-weight: bold;
+}
+.link-hover {
+  padding: 5px 25px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+.link-hover:hover {
+  background-color: #ffc107;
+  color: black;
+  padding: 5px 25px;
+}
+
+@media (max-width: 775px) {
+  .search-input {
+    display: none;
+  }
+}

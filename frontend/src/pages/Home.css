@@ -1,0 +1,21 @@
+.home-main {
+  overflow: hidden;
+  margin-top: 25px;
+  margin-bottom: 80px;
+}
+.product-img {
+  width: 200px;
+  height: 200px;
+}
+
+.product-links {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 700px) {
+  .home-main {
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+}

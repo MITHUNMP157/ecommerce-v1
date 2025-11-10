@@ -1,0 +1,12 @@
+.footer-main {
+  width: 100%;
+  background-color: rgba(47, 49, 49, 0.988);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0px;
+  border-radius: 5px 5px 0px 0px;
+  color: white;
+  position: fixed;
+  bottom: 0;
+}
