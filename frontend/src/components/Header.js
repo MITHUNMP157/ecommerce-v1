@@ -19,9 +19,9 @@ const Header = ({ cartItem, setSearchParams }) => {
         </div>
         <Search setSearchParams={setSearchParams} />
         <div className="nav-items">
-          <Link to="/profile" className="nav-item-link link-hover me-2 rounded">
+          {/* <Link to="/profile" className="nav-item-link link-hover me-2 rounded">
             Profile
-          </Link>
+          </Link> */}
           <Link
             to="/orders"
             className="nav-item-link link-hover rounded  me-2 "
@@ -30,15 +30,12 @@ const Header = ({ cartItem, setSearchParams }) => {
           </Link>
           <Link to="/cart" className="nav-item-link link-hover rounded">
             Cart
-            <Link to="/cart" className="cart-count">
+            <span to="/cart" className="cart-count">
               {cartItem.length}
-            </Link>
+            </span>
           </Link>
-          <Link
-            to="/orders"
-            className="nav-item-link link-hover rounded  me-2 "
-          >
-            Orders
+          <Link to="/login" className="nav-item-link link-hover rounded  me-2 ">
+            Logout
           </Link>
         </div>
       </div>

@@ -97,7 +97,7 @@ const Cart = ({ cartItem, setCartItem }) => {
                         </button>
                         <p className="d-inline">{item.qty}</p>
                         <button
-                          className="btn btn-primary ms-3"
+                          className="d-inline btn btn-primary ms-3"
                           onClick={() => {
                             increaseQty(item);
                           }}
@@ -121,45 +121,49 @@ const Cart = ({ cartItem, setCartItem }) => {
                 </div>
               ))}
             </div>
-            <div
-              className="col-sm-11 col-lg-2 border border-rounded ms-2 mt-3"
-              style={{ height: "250px", width: "250px" }}
-            >
-              <br />
-              <div>
-                <div className="text-center fw-bold">Order Summary</div>
-                <hr />
+            <div className="d-flex justify-content-center align-items-center">
+              <div
+                className="col-sm-11 col-lg-2 border border-rounded ms-2 mt-3"
+                style={{ height: "250px", width: "250px" }}
+              >
+                <br />
+
                 <div>
-                  <p className="d-flex justify-content-evenly">
-                    Subtotal:
-                    <span className="ms-2 fw-bold">
-                      {cartItem.reduce((acc, item) => acc + item.qty, 0)}
-                      (Units)
-                    </span>
-                  </p>
-                  <p className="d-flex justify-content-evenly">
-                    Total Value:
-                    <span className="ms-2 fw-bold">
-                      $
-                      {Number(
-                        cartItem.reduce(
-                          (acc, item) => acc + item.products.price * item.qty,
-                          0
-                        )
-                      ).toFixed(2)}
-                    </span>
-                  </p>
-                </div>
-                <hr />
-                <div className="text-center">
-                  <button
-                    className="btn btn-warning rounded-pill w-100 text-white fw-bold"
-                    onClick={() => {
-                      addToCart(cartItem);
-                    }}
-                  >
-                    Place Order
-                  </button>
+                  <div className="text-center fw-bold">Order Summary</div>
+                  <hr />
+                  <div>
+                    <p className="d-flex justify-content-evenly">
+                      Subtotal:
+                      <span className="ms-2 fw-bold">
+                        {cartItem.reduce((acc, item) => acc + item.qty, 0)}
+                        (Units)
+                      </span>
+                    </p>
+                    <p className="d-flex justify-content-evenly">
+                      Total Value:
+                      <span className="ms-2 fw-bold">
+                        $
+                        {Number(
+                          cartItem.reduce(
+                            (acc, item) => acc + item.products.price * item.qty,
+                            0
+                          )
+                        ).toFixed(2)}
+                      </span>
+                    </p>
+                  </div>
+                  <hr />
+
+                  <div className="text-center">
+                    <button
+                      className="btn btn-warning rounded-pill w-100 text-white fw-bold"
+                      onClick={() => {
+                        addToCart(cartItem);
+                      }}
+                    >
+                      Place Order
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

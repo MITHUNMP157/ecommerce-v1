@@ -7,7 +7,7 @@ const OrdersDetails = () => {
   useEffect(() => {
     const orders = async () => {
       try {
-        const res = await fetch(process.env.REACT_APP_URL);
+        const res = await fetch("http://localhost:8080/orderedItems");
         const resData = await res.json();
         setOrderData(resData);
       } catch (error) {
@@ -19,7 +19,7 @@ const OrdersDetails = () => {
 
   const cancelOrder = async (o) => {
     try {
-      const res = await fetch(process.env.REACT_APP_URL + `/${o._id}`, {
+      const res = await fetch(`http://localhost:8080/cancelOrder/${o._id}`, {
         method: "DELETE",
       });
       if (res.ok) {
@@ -40,7 +40,7 @@ const OrdersDetails = () => {
           <div className="row text-center">
             <div className="col-lg-12">
               <div className="card-body bg-secondary">
-                <div className="row  text-light p-2 ">
+                <div className="row text-light p-2">
                   <div className="col-lg-3">
                     <h3>Order Id</h3>
                   </div>
@@ -109,7 +109,13 @@ const OrdersDetails = () => {
             ))}
           </div>
         ) : (
-          <div className="text-secondary tw-bold">No Orders</div>
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="text-center bg-light p-5 rounded-4 shadow">
+              <div className="display-3 mb-3">🛍️</div>
+              <h2 className="text-secondary fw-bold">No Orders Placed</h2>
+              <p className="text-muted">You haven’t placed any orders yet.</p>
+            </div>
+          </div>
         )}
       </div>
     </div>

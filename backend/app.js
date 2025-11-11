@@ -6,14 +6,14 @@ const path = require("path");
 dotenv.config({ path: path.join(__dirname, "config", "config.env") });
 
 app.use(express.json());
-// app.use(cors());
-app.use(
-  cors({
-    origin: ["https://ecommerce-v1-xvv0.onrender.com"], // your deployed frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
+// app.use(
+//   cors({
+//     origin: ["https://ecommerce-v1-xvv0.onrender.com"], // your deployed frontend URL
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true,
+//   })
+// );
 
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const { count } = require("console");
@@ -49,7 +49,7 @@ async function run() {
       }
     });
 
-    app.get("/products/:id", async (req, res) => {
+    app.get("/product/:id", async (req, res) => {
       try {
         const id = req.params.id;
         const objectId = { _id: new ObjectId(id) };

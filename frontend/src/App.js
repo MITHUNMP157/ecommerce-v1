@@ -1,5 +1,10 @@
 import "./App.css";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Footer from "./components/Footer";
@@ -9,6 +14,37 @@ import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import OrdersDetails from "./pages/OrdersDetails";
 import Profile from "./pages/Profile";
+import Login from "./pages/Login";
+
+function AppContent({ cartItem, setCartItem }) {
+  const location = useLocation();
+
+  const hideHeaderFooter = location.pathname === "/login";
+
+  return (
+    <>
+      {!hideHeaderFooter && <Header cartItem={cartItem} />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Home />} />
+        <Route
+          path="/product/:id"
+          element={
+            <ProductDetails cartItem={cartItem} setCartItem={setCartItem} />
+          }
+        />
+        <Route path="/orders" element={<OrdersDetails />} />
+        <Route
+          path="/cart"
+          element={<Cart cartItem={cartItem} setCartItem={setCartItem} />}
+        />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      {!hideHeaderFooter && <Footer />}
+    </>
+  );
+}
 
 function App() {
   const [cartItem, setCartItem] = useState(() => {
@@ -21,40 +57,10 @@ function App() {
   }, [cartItem]);
 
   return (
-    <div className="App">
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-      <Router>
-        <Header cartItem={cartItem} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/search" element={<Home />} />
-          <Route
-            path="/product/:id"
-            element={
-              <ProductDetails cartItem={cartItem} setCartItem={setCartItem} />
-            }
-          />
-          <Route path="/orders" element={<OrdersDetails />} />
-          <Route
-            path="/cart"
-            element={<Cart cartItem={cartItem} setCartItem={setCartItem} />}
-          />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </div>
+    <Router>
+      <ToastContainer autoClose={3000} />
+      <AppContent cartItem={cartItem} setCartItem={setCartItem} />
+    </Router>
   );
 }
 

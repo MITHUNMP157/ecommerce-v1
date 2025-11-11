@@ -12,7 +12,7 @@ const Home = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          process.env.REACT_APP_URL + `/products?${searchParams}`
+          "http://localhost:8080" + `/products?${searchParams}`
         );
         const resData = await res.json();
         setProducts(resData);
@@ -35,13 +35,15 @@ const Home = () => {
               className="card  p-3 rounded shadow-sm bg-white rounded "
               style={{ height: "400px", width: "300px" }}
             >
-              <Link to={"/product/" + product._id}>
-                <img
-                  className="product-img "
-                  src={product.images}
-                  alt={product.images}
-                />
-              </Link>
+              <div className="d-flex justify-content-center align-items-center">
+                <Link to={"/product/" + product._id}>
+                  <img
+                    className="product-img "
+                    src={product.images}
+                    alt={product.images}
+                  />
+                </Link>
+              </div>
               <div className="card-body d-flex flex-column position-relative">
                 <Link to={"/product/" + product._id} className="product-links">
                   <h5 className="card-title text-dark">{product.name}</h5>

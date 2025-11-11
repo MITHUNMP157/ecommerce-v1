@@ -10,7 +10,7 @@ const ProductDetails = ({ cartItem, setCartItem }) => {
   useEffect(() => {
     const productDetails = async () => {
       try {
-        const res = await fetch(process.env.REACT_APP_URL + `/${id}`);
+        const res = await fetch(`http://localhost:8080/product/${id}`);
         const resData = await res.json();
         setProducts(resData);
       } catch (error) {
@@ -52,12 +52,12 @@ const ProductDetails = ({ cartItem, setCartItem }) => {
       <div className="mt-5">
         <div className="container-fluid ">
           <div className="row">
-            <div className="col-sm-6 my-3 ">
+            <div className="col-sm-6 my-2 ">
               <img
-                className="col-12 d-block ms-5"
+                className="img-fluid rounded "
                 src={products.images}
                 alt={products.images}
-                style={{ height: "500px", width: "70%" }}
+                style={{ maxHeight: "500px", objectFit: "contain" }}
               />
             </div>
             <div className="col-sm-6 mt-5 text-center">
