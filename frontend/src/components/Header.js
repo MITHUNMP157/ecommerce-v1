@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 
 const Header = ({ cartItem, setSearchParams }) => {
   return (
-    <nav>
+    <nav className="navbar-main">
       <div className="navbar-main-nav">
-        <div className="brand-logo">
+        <div className="brand-logo text-sm-center mb-2">
           <Link to="/">
             <img
               src={BrandLogo}
               alt="SmartBuyz"
-              style={{ width: "200px", height: "auto" }}
+              style={{ width: "250px", height: "auto" }}
             />
           </Link>
         </div>
@@ -28,11 +28,17 @@ const Header = ({ cartItem, setSearchParams }) => {
           >
             Orders
           </Link>
-          <Link to="/cart" className="nav-item-link">
+          <Link to="/cart" className="nav-item-link link-hover rounded">
             Cart
+            <Link to="/cart" className="cart-count">
+              {cartItem.length}
+            </Link>
           </Link>
-          <Link to="/cart" className="cart-count">
-            {cartItem.length}
+          <Link
+            to="/orders"
+            className="nav-item-link link-hover rounded  me-2 "
+          >
+            Orders
           </Link>
         </div>
       </div>
