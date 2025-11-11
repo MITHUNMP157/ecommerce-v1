@@ -49,7 +49,7 @@ const ProductDetails = ({ cartItem, setCartItem }) => {
 
   return (
     products && (
-      <div className="" style={{ marginTop: "70px" }}>
+      <div className="" style={{ marginTop: "150px" }}>
         <div className="container-fluid ">
           <div className="row">
             <div className="col-sm-6 my-2 ">
