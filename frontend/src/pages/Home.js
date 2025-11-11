@@ -12,7 +12,7 @@ const Home = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          "http://localhost:8080" + `/products?${searchParams}`
+          `${process.env.REACT_APP_URL}/${products}?${searchParams}`
         );
         const resData = await res.json();
         setProducts(resData);

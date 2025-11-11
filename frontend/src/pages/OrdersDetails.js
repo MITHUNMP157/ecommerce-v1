@@ -7,7 +7,7 @@ const OrdersDetails = () => {
   useEffect(() => {
     const orders = async () => {
       try {
-        const res = await fetch("http://localhost:8080/orderedItems");
+        const res = await fetch(`${process.env.REACT_APP_URL}`);
         const resData = await res.json();
         setOrderData(resData);
       } catch (error) {
@@ -19,7 +19,7 @@ const OrdersDetails = () => {
 
   const cancelOrder = async (o) => {
     try {
-      const res = await fetch(`http://localhost:8080/cancelOrder/${o._id}`, {
+      const res = await fetch(`${process.env.REACT_APP_URL}/${o._id}`, {
         method: "DELETE",
       });
       if (res.ok) {

@@ -38,7 +38,7 @@ const Cart = ({ cartItem, setCartItem }) => {
   };
   const addToCart = async (orderedItems) => {
     try {
-      const res = await fetch(process.env.REACT_APP_URL + "/addcart", {
+      const res = await fetch(`${process.env.REACT_APP_URL}/addcart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
