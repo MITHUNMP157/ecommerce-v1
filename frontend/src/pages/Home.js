@@ -12,7 +12,7 @@ const Home = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          `${process.env.REACT_APP_URL}/${products}?${searchParams}`
+          `https://e-commerce-v1-431p.onrender.com/${products}`
         );
         const resData = await res.json();
         setProducts(resData);
