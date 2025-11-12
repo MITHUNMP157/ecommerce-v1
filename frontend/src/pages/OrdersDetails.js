@@ -7,7 +7,7 @@ const OrdersDetails = () => {
   useEffect(() => {
     const orders = async () => {
       try {
-        const res = await fetch(`${process.env.REACT_APP_URL}`);
+        const res = await fetch(`${process.env.REACT_APP_URL}/orderedItems`);
         const resData = await res.json();
         setOrderData(resData);
       } catch (error) {
@@ -19,9 +19,12 @@ const OrdersDetails = () => {
 
   const cancelOrder = async (o) => {
     try {
-      const res = await fetch(`${process.env.REACT_APP_URL}/${o._id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `${process.env.REACT_APP_URL}/cancelOrder/${o._id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (res.ok) {
         setOrderData((prev) => prev.filter((order) => order._id !== o._id));
         toast.warn("Order Cancel Success");

@@ -10,7 +10,6 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Dummy validation
     if (email === "admin@gmail.com" && password === "12345") {
       localStorage.setItem("isLoggedIn", true);
       navigate("/home");
@@ -20,12 +19,7 @@ const Login = () => {
   };
 
   return (
-    <div
-      className="d-flex justify-content-center align-items-center vh-100"
-      style={{
-        background: "linear-gradient(135deg, #2874F0 40%, #FDD835 90%)", // Flipkart Blue + Yellow gradient
-      }}
-    >
+    <div className="d-flex justify-content-center align-items-center vh-100">
       <div
         className="card shadow-lg border-0 p-4"
         style={{
@@ -39,7 +33,7 @@ const Login = () => {
             className="fw-bold"
             style={{ color: "#2874F0", fontFamily: "Poppins, sans-serif" }}
           >
-            Login to FlipKart
+            Login to SmartBuyz
           </h2>
           <p className="text-muted small">
             Get access to your Orders & Wishlist
