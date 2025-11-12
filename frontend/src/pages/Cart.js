@@ -45,7 +45,6 @@ const Cart = ({ cartItem, setCartItem }) => {
         },
         body: JSON.stringify({ orderedItems }),
       });
-      console.log({ orderedItems });
       if (res.ok) {
         toast.success("Order placed successfully!");
         setCartItem([]);

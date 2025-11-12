@@ -9,7 +9,7 @@ const Header = ({ cartItem, setSearchParams }) => {
     <nav className="navbar-main">
       <div className="navbar-main-nav">
         <div className="brand-logo text-sm-center mb-2">
-          <Link to="/">
+          <Link to="/home">
             <img
               src={BrandLogo}
               alt="SmartBuyz"

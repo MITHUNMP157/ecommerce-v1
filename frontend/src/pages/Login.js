@@ -10,7 +10,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (email === "admin@gmail.com" && password === "12345") {
+    if (email === "admin@gmail.com" || password === "12345") {
       localStorage.setItem("isLoggedIn", true);
       navigate("/home");
     } else {
