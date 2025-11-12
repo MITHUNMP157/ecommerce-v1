@@ -121,7 +121,7 @@ const Cart = ({ cartItem, setCartItem }) => {
                 </div>
               ))}
             </div>
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="d-sm-flex justify-content-center align-items-center">
               <div
                 className="col-sm-11 col-lg-2 border border-rounded ms-2 mt-3"
                 style={{ height: "250px", width: "250px" }}
