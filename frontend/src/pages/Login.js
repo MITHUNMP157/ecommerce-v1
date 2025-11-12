@@ -12,7 +12,7 @@ const Login = () => {
 
     if (email === "admin@gmail.com" || password === "12345") {
       localStorage.setItem("isLoggedIn", true);
-      navigate("/home");
+      navigate("/");
     } else {
       setError("Invalid email or password");
     }
