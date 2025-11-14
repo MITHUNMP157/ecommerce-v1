@@ -28,7 +28,7 @@ const Home = () => {
       <main className="row home-main ">
         {products.map((product) => (
           <div
-            className="col-sm-12 col-md-4 col-lg-3 mt-5 p-3 d-flex justify-content-center"
+            className="col-sm-5 col-md-4 col-lg-3 mt-5 p-3 d-flex justify-content-center"
             key={product._id}
           >
             <div
