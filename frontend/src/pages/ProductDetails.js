@@ -68,14 +68,19 @@ const ProductDetails = ({ cartItem, setCartItem }) => {
                 <strong>${products.price}</strong>
               </p>
               <div className="row">
-                <div className="col">
-                  <button className="btn btn-danger me-3" onClick={qtyDecrease}>
+                <div className="col mb-2">
+                  <button
+                    className="btn btn-danger me-3"
+                    onClick={qtyDecrease}
+                    disabled={products.stock === 0}
+                  >
                     -
                   </button>
                   <p className="d-inline">{qty}</p>
                   <button
                     className="btn btn-primary ms-3"
                     onClick={qtyIncrease}
+                    disabled={products.stock === 0}
                   >
                     +
                   </button>
@@ -99,7 +104,9 @@ const ProductDetails = ({ cartItem, setCartItem }) => {
                         products.stock > 0 ? "text-success" : "text-danger"
                       }
                     >
-                      {products.stock > 0 ? " In Stock" : " Out of Stock"}
+                      {products.stock > 0
+                        ? ` In Stock (${products.stock})`
+                        : " Out of Stock"}
                     </strong>
                   </p>
                 </div>

@@ -23,8 +23,6 @@ const Home = () => {
     fetchProducts();
   }, [searchParams]);
 
-  console.log("Base URL");
-
   return (
     <div className="bg-light">
       <main className="row home-main ">
