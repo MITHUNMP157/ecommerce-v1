@@ -8,14 +8,14 @@ const { run, client } = require("./db/db");
 dotenv.config({ path: path.join(__dirname, "config", "config.env") });
 
 app.use(express.json());
-app.use(cors());
-// app.use(
-//   cors({
-//     origin: ["https://ecommerce-v1-xvv0.onrender.com"], // your deployed frontend URL
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     credentials: true,
-//   })
-// );
+//app.use(cors());
+app.use(
+  cors({
+    origin: ["https://ecommerce-v1-xvv0.onrender.com"], // your deployed frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 const productRoutes = require("./routes/productRoutes");
 const orderRoutes = require("./routes/orderRoutes");
