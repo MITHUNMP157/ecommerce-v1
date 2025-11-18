@@ -90,7 +90,7 @@ const Login = () => {
             Login
           </button>
 
-          <div className="text-center mt-3">
+          {/*<div className="text-center mt-3">
             <a
               href="#"
               className="text-decoration-none fw-semibold"
@@ -100,7 +100,7 @@ const Login = () => {
             </a>
           </div>
 
-          {/* <hr className="my-4" />
+          <hr className="my-4" />
 
           <div className="text-center">
             <p className="mb-1 text-muted">New to Flipkart?</p>
