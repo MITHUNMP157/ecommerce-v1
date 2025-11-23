@@ -3,9 +3,13 @@ const router = express.Router();
 const { getDB, ObjectId } = require("../db/db");
 
 router.get("/products", async (req, res) => {
+  let query = req.query.keyword
+    ? { name: { $regex: req.query.keyword, $options: "i" } }
+    : {};
+
   try {
     const { eCommerce } = getDB();
-    const products = await eCommerce.find();
+    const products = await eCommerce.find(query);
     const productList = await products.toArray();
     return res.status(200).json(productList);
   } catch (error) {
