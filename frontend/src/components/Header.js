@@ -3,6 +3,7 @@ import "./Header.css";
 import BrandLogo from "./images/SmartBuyz-logo1.png";
 import Search from "./Search";
 import { Link } from "react-router-dom";
+import { logout } from "../api/auth";
 
 const Header = ({ cartItem, setSearchParams }) => {
   return (
@@ -19,9 +20,9 @@ const Header = ({ cartItem, setSearchParams }) => {
         </div>
         <Search setSearchParams={setSearchParams} />
         <div className="nav-items">
-          {/* <Link to="/profile" className="nav-item-link link-hover me-2 rounded">
+          <Link to="/profile" className="nav-item-link link-hover me-2 rounded">
             Profile
-          </Link> */}
+          </Link>
           <Link
             to="/orders"
             className="nav-item-link link-hover rounded  me-2 "
@@ -34,7 +35,11 @@ const Header = ({ cartItem, setSearchParams }) => {
               {cartItem.length}
             </span>
           </Link>
-          <Link to="/login" className="nav-item-link link-hover rounded  me-2 ">
+          <Link
+            to="/login"
+            className="nav-item-link link-hover rounded  me-2 "
+            onClick={() => logout()}
+          >
             Logout
           </Link>
         </div>

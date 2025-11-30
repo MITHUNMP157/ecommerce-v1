@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -90,21 +90,21 @@ const Login = () => {
             Login
           </button>
 
-          {/*<div className="text-center mt-3">
-            <a
+          <div className="text-center mt-3">
+            <Link
               href="#"
               className="text-decoration-none fw-semibold"
               style={{ color: "#2874F0" }}
             >
               Forgot Password?
-            </a>
+            </Link>
           </div>
 
           <hr className="my-4" />
 
           <div className="text-center">
             <p className="mb-1 text-muted">New to Flipkart?</p>
-            <a
+            <Link
               href="/register"
               className="btn fw-bold"
               style={{
@@ -115,8 +115,8 @@ const Login = () => {
               }}
             >
               Create an account
-            </a>
-          </div> */}
+            </Link>
+          </div>
         </form>
       </div>
     </div>

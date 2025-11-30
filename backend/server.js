@@ -9,9 +9,17 @@ dotenv.config({ path: path.join(__dirname, "config", "config.env") });
 
 app.use(express.json());
 //app.use(cors());
+//app.use(
+//  cors({
+//    origin: ["https://ecommerce-v1-xvv0.onrender.com", "http://localhost:3000"], // your deployed frontend URL
+//    methods: ["GET", "POST", "PUT", "DELETE"],
+//    credentials: true,
+//  })
+//);
+
 app.use(
   cors({
-    origin: ["https://ecommerce-v1-xvv0.onrender.com"], // your deployed frontend URL
+    origin: ["http://localhost:3000", "https://ecommerce-v1-xvv0.onrender.com"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -19,9 +27,11 @@ app.use(
 
 const productRoutes = require("./routes/productRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 app.use("/api/v1", productRoutes);
 app.use("/api/v1", orderRoutes);
+app.use("/api/v1", userRoutes);
 
 run()
   .then(() => {

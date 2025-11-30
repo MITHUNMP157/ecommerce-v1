@@ -38,6 +38,7 @@ function getDB() {
   return {
     eCommerce: dbInstance.collection("SmartBuyz"),
     eCommerceCart: dbInstance.collection("orderedItems"),
+    eCommerceUser: dbInstance.collection("users"),
   };
 }
 
