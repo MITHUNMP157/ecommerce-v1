@@ -42,7 +42,7 @@ const Login = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
+    <div className="d-flex justify-content-center align-items-center mt-5">
       <div
         className="card shadow-lg border-0 p-4"
         style={{
@@ -110,16 +110,6 @@ const Login = () => {
           >
             Login
           </button>
-
-          <div className="text-center mt-3">
-            <Link
-              href="#"
-              className="text-decoration-none fw-semibold"
-              style={{ color: "#2874F0" }}
-            >
-              Forgot Password?
-            </Link>
-          </div>
 
           <hr className="my-4" />
 

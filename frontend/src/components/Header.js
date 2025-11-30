@@ -20,9 +20,6 @@ const Header = ({ cartItem, setSearchParams }) => {
         </div>
         <Search setSearchParams={setSearchParams} />
         <div className="nav-items">
-          <Link to="/profile" className="nav-item-link link-hover me-2 rounded">
-            Profile
-          </Link>
           <Link
             to="/orders"
             className="nav-item-link link-hover rounded  me-2 "

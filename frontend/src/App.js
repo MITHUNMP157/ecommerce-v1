@@ -70,6 +70,7 @@ function App() {
             </ProductedRoute>
           }
         />
+
         <Route
           path="/profile"
           element={
